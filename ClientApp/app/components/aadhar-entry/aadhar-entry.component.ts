@@ -3,8 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
-import { AadharCard } from '../aadhar-card';  // relative path to find the given class in dir structure
-import { AadharCardService } from '../aadhar-card.service'; // import the service
+import { AadharCard } from '../../aadhar-card';  // relative path to find the given class in dir structure
+import { AadharCardService } from '../../aadhar-card.service'; // import the service
 
 
 @Component({

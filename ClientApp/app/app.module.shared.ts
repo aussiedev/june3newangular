@@ -8,11 +8,6 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { AadharListComponent } from './components/aadhar-list/aadhar-list.component';
 
-
-import { AadharCardService } from './aadhar-card.service';
-import { AadharCard } from './aadhar-card';
-
-
 export const sharedConfig: NgModule = {
     bootstrap: [ AppComponent ],
     declarations: [
@@ -20,8 +15,7 @@ export const sharedConfig: NgModule = {
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent,
-        AadharListComponent
+        HomeComponent
     ],
     imports: [
         RouterModule.forRoot([
@@ -29,9 +23,7 @@ export const sharedConfig: NgModule = {
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'aadhar-list', component: AadharListComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
-    //providers: [AadharCardService]
 };
