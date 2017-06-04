@@ -1,0 +1,43 @@
+<div class="row">
+  <h2>Aadhar Card Information</h2>
+
+  <div class="row" *ngIf="!isSubmitted" >
+    <form>
+      <div class="form-group">
+        <label for="txtAadharNumber" >Aadhar Number</label>
+        <input type="text" class="form-control" name="txtAadharNumber" [(ngModel)]="model.AadharNumber" placeholder="Please enter Aadhar number" />
+      </div>
+      <div class="form-group">
+        <label for="txtFirstName" >First Name</label>
+        <input type="text" class="form-control" name="txtFirstName" [(ngModel)]="model.FirstName" placeholder="Please enter First name" />
+      </div>
+      <div class="form-group">
+        <label for="txtLastName" >Last Name</label>
+        <input type="text" class="form-control" name="txtLastName" [(ngModel)]="model.LastName" placeholder="Please enter Last name" />
+      </div>
+      <div class="form-group">
+        <label for="txtDateOfBirth" >Date Of Birth</label>
+        <input type="text" class="form-control" name="txtDateOfBirth" [(ngModel)]="model.DateOfBirth" placeholder="Please enter Date of Birth" />
+      </div>
+      <div class="form-group">
+        <label for="txtCity" >City</label>
+        <input type="text" class="form-control" name="txtCity" [(ngModel)]="model.City" placeholder="Please enter City" />
+      </div>
+
+      <div>
+        <button value="Submit" (click)="addCardToAadharStore()" class="btn btn-primary"  >Submit</button>
+        <button value="Reset" (click)="resetAadharInformation()" class="btn btn-cancel" >Reset</button>
+        <a [routerLink]="['/']" class="btn-link">Back to list</a>  <!--Puts the control back on the root route-->
+      </div>
+    </form>
+  </div>
+
+  <div class="row" *ngIf="isSubmitted" >
+    <p>Aadhar information has been submitted</p>
+    <br/>
+    <a [routerLink]="['/']" class="btn-link">Click here</a> to load the list  <!--Puts the control back on the root route-->
+  </div>
+
+</div>
+
+

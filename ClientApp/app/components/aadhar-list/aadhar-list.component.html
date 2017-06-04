@@ -1,0 +1,43 @@
+<div class="row"  *ngIf="list && list.length">
+
+  <table  class="table table-responsive table-hover ">  <!--Display a list of the aadhar cards in the table -->
+    <thead class="thead-inverse">
+      <tr>
+        <th>Aadhar Card Number</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Date Of Birth</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">   <!--ngFor is used with a list-->
+        <td>{{item.AadharNumber}}</td>
+        <td>{{item.FirstName}} {{item.LastName}}</td>
+        <td>{{item.City}}</td>
+        <td>{{item.DateOfBirth | date : "MM/dd/yyyy" }}</td>  <!--Used date filter--> 
+        <td><button class='btn btn-small' (click)="editItem(item.AadharCardId)"   value="Edit">Edit</button> | <button class='btn btn-danger' value="Delete">Delete</button> </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td colspan="5"  >
+          <button class='btn btn-primary' value="Add" (click)="addNewClick()"   >Add New</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+<div *ngIf="list && list.length==0" >
+  <p  >No records found in the Aadhar database.  Why don't you create the first one?</p>
+</div>
+
+  <p  >{{normalMessage}}</p>
+
+
+<!--
+Watch-out for the directives such as ngIf, ngFor, ngShow etc.
+
+highly case-sensitive
+-->
